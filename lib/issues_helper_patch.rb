@@ -20,7 +20,11 @@ module IssuesHelperPatch
 					end
 					header_tags << javascript_include_tag('tkgmap_application',:plugin => 'redmine_tkgmap')
 					header_tags << javascript_include_tag('showMapWindow',:plugin => 'redmine_tkgmap')
-					header_tags << content_tag("script", "",{:src =>'https://maps.google.com/maps/api/js?v=3&sensor=false', :type =>'text/javascript', :charset=>'UTF-8'})
+#					header_tags << content_tag("script", "",{:src =>'https://maps.google.com/maps/api/js?v=3&sensor=false', :type =>'text/javascript', :charset=>'UTF-8'})
+# content_tag("script", "",{:src =>TkgmapHelper::gmap_api_uri, :type =>'text/javascript', :charset=>'UTF-8'})
+					gmap_api_uri = 'https://maps.google.com/maps/api/js?v=3&sensor=false'
+    					gmap_api_uri << '&key=' << Setting.plugin_redmine_tkgmap['gmap_api_key'] if Setting.plugin_redmine_tkgmap['gmap_api_key'].present?
+					header_tags << content_tag("script", "",{:src =>gmap_api_uri, :type =>'text/javascript', :charset=>'UTF-8'})
 					safe_join header_tags
 				end
 

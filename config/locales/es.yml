@@ -1,0 +1,6 @@
+# English strings go here for Rails i18n
+en:
+  label_tkg: "LatLng"
+  set_lat_lng_tkg: "Seleccionar"
+  window_close_tkg: "Cerrar"
+  place_not_found: "Lugar no encontrado"
