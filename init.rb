@@ -4,9 +4,9 @@ require 'issues_helper_patch'
 Redmine::Plugin.register :redmine_tkgmap do
   name 'Redmine Tkgmap plugin'
   author 'Shota.K'
-  description 'Adding lat lng chooser with google map.(Redmine 2.3, 2,2...)'
+  description 'Añadir latitud y longitud con Google Maps.(Redmine 2.3, 2,2...). Modificado para incluir errores'
   version '0.1'
-  url 'https://github.com/shota-kobayashi/redmine_tkgmap'
+  url 'https://github.com/guillermogross/redmine_tkgmap'
   author_url 'https://github.com/shota-kobayashi/redmine_tkgmap'
 
   settings :default => {
